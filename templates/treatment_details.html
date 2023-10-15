@@ -1,0 +1,72 @@
+{% extends 'data_entry.html' %}
+
+{% block treatment_details %}
+
+<body>
+
+    <div class="Patients-TreatmentDetails">
+        {% if error %}
+        <p class="error" style="font-size: 16px; color: red">{{ error }}</p>
+        {% endif %}
+        {% if success %}
+        <p class="success" style="font-size: 16px; color: green">{{ success }}</p>
+        {% endif %}
+        
+        
+        <h1>Enter Patient Treatment Details</h1>
+        <div class="search-container-patient">
+            <label>Treatment ID:</label>
+            <form action="{{ url_for('search_treatment_description') }}" method="POST">
+                
+                <input type="text" placeholder="Search for treatment ID" name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <form method="POST" action="{{ url_for('treatment_details') }}">
+
+            
+
+            <label for="treatment_description">Description:</label>
+            <textarea id="treatment_description" name="treatment_description" >{{ treatment_description }}</textarea>
+            <br><br>
+        
+            <label>Side Effects:</label>
+            <input type="text" name="side_effects" style="color:#0077b6" value="{{ side_effects }}"><br>
+        
+            <label>Cost:</label>
+            <input type="text" name="cost" style="color:#0077b6" value="{{ cost }}"><br>
+        
+            <input type="submit" name="submit" value="Save">
+        
+        </form>
+        
+
+
+
+        <script>
+            setTimeout(function () {
+                var error = document.querySelector('.error');
+                var success = document.querySelector('.success');
+                if (error) {
+                    error.remove();
+                }
+                if (success) {
+                    success.remove();
+                }
+            }, 2000); // 2 seconds
+        </script>
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+
+{% endblock %}

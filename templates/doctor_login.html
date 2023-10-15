@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="login-box">
+
+    <img src="/static/images/logo1.png" alt="Logo" class="avatar">
+    {% if error %}
+    <p class="error" style="font-size: 11px; color: red">{{ error }}</p>
+    {% endif %}
+    <h1 style="padding-top:10px" class="FDHeading">Doctor Login</h1>
+    <form action="{{ url_for('doctor_authenticate') }}" method="POST">
+        <p>Doctor ID</p>
+        <input type="text" required name="id" placeholder="Enter Doctor ID" style="color:#0077b6">
+        <p>Password</p>
+        <input type="password" name="password" required placeholder="Enter Password" style="color:#0077b6">
+        <input type="submit" name="submit" value="Login">      
+    </form>
+
+</div>
+{% endblock %}

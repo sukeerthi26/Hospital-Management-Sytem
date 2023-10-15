@@ -1,0 +1,59 @@
+{% extends 'doctor.html' %}
+{% block treatmentTable %}
+<h2 class='upcomingTreatment'>Dashboard : Upcoming Treatments</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Treatment </th>
+            <th>Date </th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient[0] }}</td>
+                <td>{{ patient[1] }}</td>
+                <td>{{ patient[2] }}</td>
+                <td>{{ patient[3] }}</td>
+                <td>{{ patient[4] }}</td>
+                <td>{{ patient[5] }}</td>
+                <td><button onclick="location.href='/viewTreatment/{{doctor_id}}/{{ patient[0] }}'">View</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class='previousTreatments'><h2>Previous Treatments</h2></div>
+<table>
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Treatments </th>
+            <th>Date </th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients_past %}
+            <tr>
+                <td>{{ patient[0] }}</td>
+                <td>{{ patient[1] }}</td>
+                <td>{{ patient[2] }}</td>
+                <td>{{ patient[3] }}</td>
+                <td>{{ patient[4] }}</td>
+                <td>{{ patient[5] }}</td>
+                <td><button onclick="location.href='/viewTreatment/{{doctor_id}}/{{ patient[0] }}'">View</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../static/style.css" >
+	<title>Patient Records</title>
+</head>
+
+<div id="mySidenav" class="sidenav">
+	<!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+	<a href="{{ url_for('patient_registration')}}" style="margin-top: 100px;">Register a Patient</a>
+	<a href="{{ url_for('book_appointment')}}">Book an Appointment</a>
+	<a href="{{ url_for('test_schedule')}}">Schedule a Test</a>
+	<a href="{{ url_for('treatment')}}">Schedule Treatment</a>
+	<a href="{{ url_for('admit')}}">Admit a patient</a>
+	<a href="{{ url_for('Discharge')}}">Discharge a patient</a>
+	<a href="{{ url_for('show_all_patients')}}">Edit patient details</a>
+	<a href="{{ url_for('frontdesk')}}">Logout</a>
+</div>
+<div style="background-color: #0077b6;">
+	<br>
+	<h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+<body style="background-color: white;">
+<div class=Show-Patient>
+	<h1>Patient Records</h1>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Address</th>
+			<th>Gender</th>
+			<th>Phone Number</th>
+			<th>Insurance ID</th>
+			<th>Actions</th>
+		</tr>
+		{% for record in records %}
+	<tr>
+		<td>{{ record[0] }}</td>
+		<td>{{ record[1] }}</td>
+		<td>{{ record[2] }}</td>
+		<td>{{ record[3] }}</td>
+		<td>{{ record[4] }}</td>
+		<td>{{ record[5] }}</td>
+		<td>{{ record[6] }}</td>
+		<td>
+			<a href="/edit/{{ record[0] }}">Edit</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+</div>
+</body>
+</html>

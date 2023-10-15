@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System | Discharge Patient</title>
+ </head>
+
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a href="{{ url_for('patient_registration')}}" style="margin-top: 100px;">Register a Patient</a>
+    <a href="{{ url_for('book_appointment')}}">Book an Appointment</a>
+    <a href="{{ url_for('test_schedule')}}">Schedule a Test</a>
+    <a href="{{ url_for('treatment')}}">Schedule Treatment</a>
+    <a href="{{ url_for('admit')}}">Admit a patient</a>
+    <a href="{{ url_for('Discharge')}}">Discharge a patient</a>
+    <a href="{{ url_for('show_all_patients')}}">Edit patient details</a>
+    <a href="{{ url_for('frontdesk')}}">Logout</a>
+</div>
+
+<div style="background-color: #0077b6;">
+    <br>
+    <h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+ <div class="Discharge">
+    {% if status %}
+    <p class="status" style="font-size: 11px; color: green">{{ status }}</p>
+    {% endif %}
+    {% if error %}
+    <p class="error" style="font-size: 11px; color: red">{{ error }}</p>
+    {% endif %}
+    <h1 style="padding-top:10px">Discharge Patient</h1>
+    <form action="{{ url_for('authenticate_Discharge') }}" method="post">
+        <p>Treatmentid
+            <input type="text" required name="Treatmentid" placeholder="Enter Treatmentid" style="color:#0077b6"></p>
+        <p>Enter End Date</p>
+            <input type="date" required name="date" id="end_date">
+            <input type="submit" name="submit" value="Discharge">
+    </form>
+ </div>
+</html>

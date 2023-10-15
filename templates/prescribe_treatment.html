@@ -1,0 +1,18 @@
+{% extends 'doctor.html' %}
+
+{% block prescribe_medication %}
+    <h2 style="margin-top:10%; margin-left:40% ; margin-bottom:1%"> Prescribe a treatment </h2>
+    <div class="search-container-patient-medication">
+        <form action="{{ url_for('prescribe_treatment_patient',doctor_id=doctor_id) }}" method="POST">
+          <input type="text" placeholder="Search for patient to prescribe treatment"  required name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      {% if error %}
+        <p style="font-size: 15px; color: red; margin-left:40% ">{{ error }}</p>
+        {% endif %}
+        {% if success %}
+        <p  style="font-size: 15px; color: green; margin-left:40% ">{{ success }}</p>
+        {% endif %}
+    
+    {% endblock  %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System | Treatment Scheduling</title>
+    <script>
+        function updateDoctors() {
+            var specialisation = document.getElementById('specialisations').value;
+            var date = document.getElementById('date').value;
+            var time_slot = document.getElementById('timeSlot').value;
+            var doctorsDropdown = document.getElementById('doctors');
+            doctorsDropdown.options.length = 0; // Clear the options
+    
+            // Make a request to the server to get the list of doctors for the selected specialisation
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/get_doctors_treatment/' + specialisation + '?date=' + date + '&time_slot=' + time_slot, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var doctors = response.doctors;
+                    // Add each doctor to the second drop-down
+                    for (var i = 0; i < doctors.length; i++) {
+                        var option = document.createElement('option');
+                        option.text = doctors[i][1];
+                        option.value = doctors[i][1];
+                        doctorsDropdown.add(option);
+                    }
+            }
+        };
+    xhr.send();
+}
+</script>
+</head>
+
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a href="{{ url_for('patient_registration')}}" style="margin-top: 100px;">Register a Patient</a>
+    <a href="{{ url_for('book_appointment')}}">Book an Appointment</a>
+    <a href="{{ url_for('test_schedule')}}">Schedule a Test</a>
+    <a href="{{ url_for('treatment')}}">Schedule Treatment</a>
+    <a href="{{ url_for('admit')}}">Admit a patient</a>
+    <a href="{{ url_for('Discharge')}}">Discharge a patient</a>
+    <a href="{{ url_for('show_all_patients')}}">Edit patient details</a>
+    <a href="{{ url_for('frontdesk')}}">Logout</a>
+</div>
+
+<div style="background-color: #0077b6;">
+    <br>
+    <h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+<div class="Treatment-Scheduling">
+    {% if status %}
+    <p class="status" style="font-size: 11px; color: green; margin-top:-10%">{{ status }}</p>
+    {% endif %}
+    {% if error %}
+    <p class="error" style="font-size: 11px; color: red; margin-top:-10%">{{ error }}</p>
+    {% endif %}
+    <h1 style="padding-top:10px">Treatment-Scheduling</h1>
+    <form action="{{ url_for('authenticate_treatment') }}" method="post">
+        <p>Treatmentid
+            <input type="text" required name="Treatmentid" placeholder="Enter Treatmentid" style="color:#0077b6"></p>
+        <!-- <p>Treatmenttype
+            <input type="text" required name="Treatmenttype" placeholder="Enter Treatmenttype" style="color:#0077b6"></p> -->
+        
+        </p>
+        <p>Choose the Specialisation
+             <select id="specialisations" onchange="updateDoctors()">
+                <option value="">Select Specialisation</option>
+                {% for item in specialisations %}
+                    <option value="{{ item[0] }}">{{ item[0] }}</option>
+                {% endfor %}
+            </select>
+            </p>
+            <p>Choose Date</p>
+            <input type="date" required name="date" id="date" onchange="updateDoctors()">
+        <p>Choose TimeSlot
+            <select id="timeSlot" required name="timeSlot" onchange="updateDoctors()">
+                  <option value="">Select Time Slot</option>
+                  <option value="9-12">9-12</option>
+                  <option value="2-5">2-5</option>
+                  <option value="6-10">6-10</option>
+            </select></p>
+            <p>Choose the Doctor
+                <select id="doctors" required name="DoctorName">
+                    <option value="">Select Doctor</option>
+                </select>
+            </p>
+    
+                
+                <input type="submit" name="submit" value="Schedule">
+            </form>
+          </div>
+        </html>

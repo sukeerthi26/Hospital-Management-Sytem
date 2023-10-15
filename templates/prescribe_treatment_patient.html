@@ -1,0 +1,59 @@
+{% extends 'doctor.html' %}
+
+{% block prescribe_medication %}
+    <h2 style="margin-top:10%; margin-left:40% ; margin-bottom:1%"> Prescribe a treatment </h2>
+    <div class="search-container-patient-medication">
+        <form action="{{ url_for('prescribe_treatment_patient',doctor_id=doctor_id) }}" method="POST">
+          <input type="text" value={{ search_term }} required name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    {% if error %}
+      <p  style="font-size: 17px; color: red;margin-left: 40%">{{ error }}</p>
+    {% else %}
+    <div class='prescribe_treatment_container' style="margin-left:40%">
+        <form action="{{ url_for('prescribe_treatment_patient_update',doctor_id=doctor_id,patient_id=patient_id) }}" method="POST">
+            <p> Treatment Name:</p>
+            <input type="text" id="treatment-search" placeholder="Search for a treatment...">
+            <select id="treatment-name" name="treatment_id" required>
+              {% for treatment in treatments %}
+                <option value="{{ treatment[0] }}">{{ treatment[1] }}</option>
+              {% endfor %}
+            </select>
+            <p>Treatment Description :</p>
+            <input type="text"  name="treatment_description" required> </br>
+            <input style="margin-top:20px"type="submit" name="submit" value="Submit">
+          </form>
+          <script>
+            var searchBox = document.getElementById('treatment-search');
+            var select = document.getElementById('treatment-name');
+            var options = select.options;
+            var optionValues = Array.from(options).map(function(option) {
+              return {value: option.value, text: option.text};
+            });
+            
+            // update the search box value when an option is selected
+            select.addEventListener('change', function() {
+            var selectedOption = options[select.selectedIndex];
+            searchBox.value = selectedOption.text;
+            });
+            
+            searchBox.addEventListener('input', function() {
+              var searchTerm = searchBox.value.toLowerCase();
+              var filteredOptions = optionValues.filter(function(option) {
+                return option.text.toLowerCase().indexOf(searchTerm) !== -1;
+              });
+          
+              // update the select element's options
+              while (select.options.length > 0) {
+                select.remove(0);
+              }
+              filteredOptions.forEach(function(option) {
+                var newOption = new Option(option.text, option.value);
+                select.add(newOption);
+              });
+            });
+          </script>
+    </div>
+    {% endif %}
+    {% endblock  %}

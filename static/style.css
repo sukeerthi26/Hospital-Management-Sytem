@@ -1,0 +1,1423 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    /*background: url(loginbg.jpg);*/
+    background-size: cover;
+    background-position: center;
+    font-family:'Arial Narrow Bold', sans-serif;
+    background-color: #94ceeb;
+
+
+}
+
+.nav_bar{
+    margin: 6rem 0 4rem 0;
+    background-color:#0077b6;
+    height: 3rem;
+    overflow: hidden;
+    /*border-radius: 10px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 50%;
+}
+
+
+.logo img{
+        display: block;
+        padding: 1rem 0 0 0;
+}
+
+.Whole-navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: -6rem 0 -2rem 0;
+    float: left;
+    position: fixed;
+    width: 100%;
+}
+.frontdesk_main h2{
+    text-align: left; 
+    margin-top: 300px;
+    margin-left: 650px;
+    display:flex; 
+    flex-direction: column; 
+    align-items: center
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #3d5a80;
+} 
+
+.admin h1{
+    text-align: left; 
+    margin-top: 300px;
+    margin-left: 400px;
+    display:flex; 
+    flex-direction: column; 
+    align-items: center
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #3d5a80;
+}
+
+  .navbar-options>a{
+        margin: 1rem 0 -1rem 0;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        text-decoration: none;
+        overflow: hidden;
+        color:white;
+    }
+    .navbar-options>a:visited{
+        color:white;
+    }
+    .navbar-options>a:hover{
+        color: #caf0f8;
+    }
+
+    
+    
+    
+    #Home{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    
+    .hospital-pic{
+        margin:4rem 2rem 0rem 0;
+        border: black;
+        border-radius: 10px;
+    }
+    .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .text{
+        font-size: 20px;
+        margin: 15rem 5rem 5rem 5rem;
+        padding: 0;
+        color: #03045e;
+        width: 400px;
+        text-align: center;
+        
+    }
+    .text h1{
+        font-size: 50px;
+        line-height: 4rem;
+        letter-spacing: 0rem;
+
+    }
+
+.login-box{
+width: 320px;
+height: 420px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 70px 30px;
+border-radius: 5%;
+color: #03045e;
+
+}
+
+.avatar
+{
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+
+}
+.login-box p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+
+
+
+}
+
+.login-box input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+
+
+}
+
+.login-box input[type="text"] , input[type="password"]
+{
+
+border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+
+
+}
+
+
+
+
+.login-box input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+
+}
+
+.login-box ::placeholder
+{
+
+    color: #fdfeff;
+}
+
+
+.login-box input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.login-box a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  /*top: 48px;*/
+  left: 0;
+  bottom: 0;
+  background-color: #0077b6;
+  overflow-x: hidden;
+  padding-top: 20px;
+  /*transition: 0.5s;*/
+}
+
+.sidenav a {
+  padding: 12px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #caf0f8;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn{
+    font-size:25px;
+    /*cursor:pointer;*/
+    top: 10px;
+    left: 0;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  margin-top: 100px;
+}
+
+.main h2{
+    background-position: center;
+    /*font-family:'Arial Narrow Bold', sans-serif;*/
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.Patient-Registration{
+ width: 320px;
+height: 690px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 48%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-40%);
+box-sizing: border-box;
+padding: 20px 30px;
+border-radius: 7%;
+color: #03045e;   
+}
+
+.Patient-Registration h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+
+}
+.Patient-Registration p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.Patient-Registration input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Patient-Registration input[type="text"] , input[type="tel"],input[type="date"],input[type="number"]
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.Patient-Registration input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Patient-Registration::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Patient-Registration input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Patient-Registration a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.Patient-Registration select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+
+.Appointment{
+    width: 320px;
+   height: 700px;
+   background: rgba(202, 240, 248, 1);
+   color: #fff;
+   top: 58%;
+   left: 50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   box-sizing: border-box;
+   padding: 30px 30px;
+   border-radius: 5%;
+   color: #03045e;   
+   }
+   
+
+.Appointment h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Appointment p,select{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.Appointment input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Appointment input[type="text"] ,input[type="date"],select
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fdfeff;
+font-size: 16px;
+}
+
+.Appointment input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Appointment::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Appointment input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Appointment a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.Appointment select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+
+.Test-Scheduling{
+ width: 320px;
+height: 540px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.Test-Scheduling h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Test-Scheduling p,select{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+
+.Test-Scheduling input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Test-Scheduling input[type="text"] ,input[type="text"],input[type="date"],select
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fdfeff;
+font-size: 16px;
+}
+
+.Test-Scheduling input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Test-Scheduling::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Test-Scheduling input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Test-Scheduling a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.Test-Scheduling select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+
+.Treatment-Scheduling{
+ width: 320px;
+height: 620px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 55%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.Treatment-Scheduling h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Treatment-Scheduling p,select{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+
+.Treatment-Scheduling input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Treatment-Scheduling input[type="text"] ,input[type="text"],input[type="date"],select
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fdfeff;
+font-size: 16px;
+}
+
+.Treatment-Scheduling input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Treatment-Scheduling::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Treatment-Scheduling input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Treatment-Scheduling a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.Treatment-Scheduling select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+
+.admit{
+ width: 320px;
+height: 550px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.admit h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.admit p,select{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+
+.admit input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.admit input[type="text"] ,input[type="date"],select
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fdfeff;
+font-size: 16px;
+}
+
+.admit input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.admit::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.admit input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.admit a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.admit select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+
+.Discharge{
+ width: 320px;
+height: 370px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.Discharge h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Discharge p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+
+.Discharge input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Discharge input[type="text"] ,input[type="date"]
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fdfeff;
+font-size: 16px;
+}
+
+.Discharge input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Discharge::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Discharge input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Discharge a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.Show-Patient table {
+  border-collapse: collapse;
+  color: black;
+  margin-left: 30%;
+  margin-top: 0%;
+  width: 50%;
+}
+.Show-Patient h1{
+  margin-left: 0%;
+  margin-top: 5%;
+  font-size: 25px;
+}
+
+.Show-Patient th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.Show-Patient th {
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.Show-Patient form {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.Show-Patient input[type="text"], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.Show-Patient input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Show-Patient input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.Edit-Patient{
+ width: 320px;
+height: 690px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 40%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-40%);
+box-sizing: border-box;
+padding: 20px 30px;
+border-radius: 7%;
+color: #03045e;   
+}
+
+.Edit-Patient h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+
+}
+.Edit-Patient p, label{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.Edit-Patient input{
+
+    width: 100%;
+    margin-bottom: 10px ;
+}
+
+.Edit-Patient input[type="text"] , input[type="tel"],input[type="text"],input[type="number"],input[type="text"] ,select
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #004F98;
+font-size: 16px;
+}
+
+.Edit-Patient input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Edit-Patient::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Edit-Patient input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Edit-Patient a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.Edit-Patient select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+
+.Addingfrontdeskop{
+ width: 320px;
+height: 550px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.Addingfrontdeskop h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+
+}
+.Addingfrontdeskop p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.Addingfrontdeskop input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Addingfrontdeskop input[type="text"] , input[type="tel"],input[type="password"],input[type="password"]
+
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.Addingfrontdeskop input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Addingfrontdeskop::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Addingfrontdeskop input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Addingfrontdeskop a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.AddingDataEntryop{
+ width: 320px;
+height: 550px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.AddingDataEntryop h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+
+}
+.AddingDataEntryop p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.AddingDataEntryop input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.AddingDataEntryop input[type="text"] , input[type="tel"],input[type="password"],input[type="password"]
+
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.AddingDataEntryop input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.AddingDataEntryop::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.AddingDataEntryop input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.AddingDataEntryop a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+
+
+}
+
+.AddingDoctor{
+ width: 320px;
+height: 720px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 60%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 40px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.AddingDoctor h1{
+
+    margin: 0;
+    padding: 0 0 10px;
+    text-align: center;
+    font-size: 18px;
+
+}
+.AddingDoctor p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.AddingDoctor input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.AddingDoctor input[type="text"] , input[type="tel"],input[type="password"],input[type="email"], select
+
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.AddingDoctor input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.AddingDoctor::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.AddingDoctor input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.AddingDoctor a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.AddingDoctor select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color:#94ceeb ;
+}
+.Deletefrontdeskop{
+ width: 320px;
+height: 270px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 60px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.Deletefrontdeskop h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+
+}
+.Deletefrontdeskop p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.Deletefrontdeskop input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.Deletefrontdeskop input[type="text"] 
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.Deletefrontdeskop input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.Deletefrontdeskop::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.Deletefrontdeskop input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.Deletefrontdeskop a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.DeleteDataEntryop{
+ width: 320px;
+height: 270px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 60px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.DeleteDataEntryop h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+
+}
+.DeleteDataEntryop p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.DeleteDataEntryop input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.DeleteDataEntryop input[type="text"] 
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.DeleteDataEntryop input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.DeleteDataEntryop::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.DeleteDataEntryop input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.DeleteDataEntryop a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+
+
+}
+
+.DeleteDoctor{
+ width: 320px;
+height: 270px;
+background: rgba(202, 240, 248, 1);
+color: #fff;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+box-sizing: border-box;
+padding: 60px 30px;
+border-radius: 5%;
+color: #03045e;   
+}
+
+.DeleteDoctor h1{
+
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+
+}
+.DeleteDoctor p{
+    margin: 0;
+    padding-top:12px ;
+    font-weight: bold;
+}
+
+.DeleteDoctor input{
+
+    width: 100%;
+    margin-bottom: 20px ;
+}
+
+.DeleteDoctor input[type="text"] 
+{
+  border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.DeleteDoctor input[type="submit"]
+{
+
+border: none;
+outline: none;
+height: 40px;
+font-size: 18px;
+border-radius: 20px;
+color: #fff;
+background: #1c8adb;
+}
+
+.DeleteDoctor::placeholder
+{
+
+    color: #fdfeff;
+}
+
+.DeleteDoctor input[type="submit"]:hover
+{
+
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.DeleteDoctor a{
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+
+
+}

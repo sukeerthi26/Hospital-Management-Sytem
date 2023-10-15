@@ -1,0 +1,199 @@
+table {
+
+    border-collapse: collapse;
+    width: 80%;
+    float: right;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+ th {
+    background-color: #555;
+    color: white;
+}
+
+ tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.topnav {
+    background-color: #0077b6;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 90px;
+    float: right;
+    width: 100%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20%;
+    text-decoration: none;
+    font-size: 40px;
+   
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a.split:hover {
+
+    color: black;
+  }
+  
+  /* Create a right-aligned (split) link inside the navigation bar */
+  .topnav a.split {
+    float: right;
+
+    color: white;
+    font-size: 20px;
+    height: 70px;
+    padding: 20px;
+    
+  }
+
+  /* Style the sidebar - fixed full height */
+.sidebar {
+    height: 100%;
+    width: 18%;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    background-color: #0077b6;
+    overflow-x: hidden;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar img {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  /* Style sidebar links */
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color:  #faf8f8;
+    display: block;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  /* Style links on mouse-over */
+  .sidebar a:hover {
+    color: #818181;
+  }
+  
+  /* Style the main content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }
+  
+  /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+  /*.doctor {
+    padding-left: 20px;
+    padding-top: 10px;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 40%;
+    background-color: #0077b6;
+  }*/
+  /* search bar styles */
+
+.search-container-patient {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 10px 20%;
+}
+
+.search-container-patient-medication {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 10px 20%;
+
+}
+
+form input[type="text"] {
+  padding: 10px;
+ 
+  border-radius: 20px;
+  border: solid;
+  font-size: 16px;
+  width: 400px;
+}
+
+form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 25px;
+  margin-left: 10px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.upcomingTreatment{
+color: black;
+ margin-left:20%;
+
+}
+.previousTreatments{
+  color: black;
+  margin-left:20%;
+  padding-top: 50px;  
+}
+
+
+.basic_patient_details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left:30%;
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 40%;
+  background-color: aqua;
+  border-radius: 20px;
+}
+
+.basic_patient_details p {
+  margin: 0;
+  text-align: center;
+}
+
+.basic_patient_details strong {
+  font-weight: bold;
+  margin-right: 10px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+</head>
+
+<div id="mySidenav" class="sidenav">
+	<!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+	<a href="{{url_for('administrator_mainpage')}}" class="previous" style=" color: white; margin-top:40px;">&laquo; Back</a>
+	<a href="{{url_for('delete_frontdesk_op')}}" style="margin-top: 20px;">Delete Frontdesk operator</a>
+	<a href="{{url_for('delete_dataentry_op')}}">Delete DataEntry operator</a>
+	<a href="{{url_for('delete_doctor')}}">Delete Doctor</a>
+</div>
+
+<div style="background-color: #0077b6;">
+	<br>
+	<h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+<div class="frontdesk_main">
+	<h2>Welcome User!</h2>
+	<!-- <p>This sidenav is always shown.</p> -->
+</div>
+
+<!-- <span class="openbtn" onclick="openNav()">&#9776;</span> -->
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</html>

@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css" >
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Management System | Patient Registration</title>
+	
+</head>
+
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a href="{{ url_for('patient_registration')}}" style="margin-top: 100px;">Register a Patient</a>
+    <a href="{{ url_for('book_appointment')}}">Book an Appointment</a>
+    <a href="{{ url_for('test_schedule')}}">Schedule a Test</a>
+    <a href="{{ url_for('treatment')}}">Schedule Treatment</a>
+	<a href="{{ url_for('admit')}}">Admit a patient</a>
+	<a href="{{ url_for('Discharge')}}">Discharge a patient</a>
+    <a href="{{ url_for('show_all_patients')}}">Edit patient details</a>
+    <a href="{{ url_for('frontdesk')}}">Logout</a>
+</div>
+
+<div style="background-color: #0077b6;">
+	<br>
+	<h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+<div class="Patient-Registration">
+	{% if status %}
+    <p class="status" style="font-size: 11px; color: green; margin-top:-10%">{{ status }}</p>
+    {% endif %}
+	<h1 style="padding-top:10px">Patient Registration</h1>
+	<form action="{{ url_for('patient_insert') }}" method="POST">
+		<p>Patientname</p>
+		<input type="text" required name="PatientName" placeholder="Enter username" style="color:#0077b6">
+		<p>Address</p>
+		<input type="text" name="Address" placeholder="Enter Address" style="color:#0077b6">
+		<p>PhoneNumber</p>
+		<input type="tel" required name="Number" placeholder="Enter PhoneNumber" pattern="[0-9]{10}" style="color:#0077b6">
+		<p>Insurance id</p>
+		<input type="text" name="Insurance id" placeholder="Enter Insurance id" style="color:#0077b6">
+		<p>Gender</p> 
+		<select required name="Gender">
+		<option value = ""> Select
+		</option>
+		<option value = "F">Female
+		</option>
+		<option value = "M">Male
+		</option>
+		<option value = "Others">Others
+		</option>
+	    </select>
+	    <p>Age</p>
+	    <input type="number" required name="Age" placeholder="Enter Age" style="color:#0077b6">
+        <input type="submit" name="submit" value="Register">
+	    <!-- <p>Date of Birth</p>
+	    <input type="date" id="date"> -->
+	</form>
+</div>
+
+</html>

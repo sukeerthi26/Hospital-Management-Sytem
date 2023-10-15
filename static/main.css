@@ -1,0 +1,444 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial Narrow Bold',sans-serif;
+    background-color: #94ceeb;
+}
+
+
+       
+.main {
+        margin-left: 200px; /* Same as the width of the sidenav */
+        margin-top: 100px;
+      }
+      
+.Patients-TestDetails{
+       width: 460px;
+       height: 380px;
+       background: rgba(202, 240, 248, 1);
+       color: #fff;
+       top: 50%;
+       left: 50%;
+       position: absolute;
+       transform: translate(-50%,-50%);
+       box-sizing: border-box;
+       padding: 40px 30px;
+       border-radius: 5%;
+       color: #03045e;   
+       }
+.patient_TestDetails h1{
+
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+
+}
+.patient-TestDetails label{
+  margin: 0;
+  padding-top:12px ;
+  font-weight: bold;
+}
+
+
+.patient-TestDetails input{
+
+  width: 100%;
+  margin-bottom: 20px ;
+}
+
+
+.patient-TestDetails input[type="text"],select 
+{
+
+  border: none;
+  padding: 5px ;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fdfeff;
+  font-size: 16px;
+
+
+}
+/* searchbar input{ */
+       /* flex:1; */
+       /* border:0; */
+       /* outline:none; */
+       /* padding:50px 70px; */
+       /* background-position: center; */
+  /* } */
+/* .fa fa-search  input{ */
+    /* flex:1; */
+    /* border:0; */
+    /* outline:none; */
+    /* padding:50px 70px; */
+    /* background-position: center; */
+/* } */
+.Patients-TestDetails input[type="submit"]
+{
+width: 100px;
+border: none;
+outline: none;
+height: 30px;
+font-size: 16px;
+border-radius: 10px;
+color: #fff;
+background: #1c8adb;
+}
+
+ 
+
+ 
+  
+  .patient-TestDetails input[type="submit"]:hover
+{
+
+  cursor: pointer;
+  background: #39dc79;
+  color: #000;
+}
+
+.patient-TestDetails a{
+
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+}
+
+.Patients-TestDetails select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color:#94ceeb ;
+}
+
+.Patients-TestDetails input[type="file"]{
+display: inline-block;
+border: 1px solid #ccc;
+padding: 5px 10px;
+font-size: 13px;
+line-height: 1.42857143;
+color: #fff;
+background-color: #94ceeb;
+border-radius: 4px;
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.Patients-TestDetails input[type="file"]:hover,
+.Patients-TestDetails input[type="file"]:focus {
+border-color: #66afe9;
+outline: 0;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+
+
+.topnav {
+  background-color: #0077b6;
+  overflow: hidden;
+  
+  top: 0;
+  left: 0;
+  height: 90px;
+  float: right;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float:left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20%;
+  text-decoration: none;
+  font-size: 40px;
+ 
+}
+
+/* Change the color of links on hover */
+.topnav a.split:hover {
+
+  color: black;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+  float: right;
+
+  color: white;
+  font-size: 20px;
+  height: 70px;
+  padding: 20px;
+  
+}
+
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  z-index: 1;
+  
+  left: 0;
+  background-color: #0077b6;
+  overflow-x: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar a{
+padding: 20px 20px 20px 20px;
+text-decoration: none;
+font-size: 20px;
+color: #f2f2f2;
+display: block;
+text-align: center;
+display: inline-block;
+margin: 10px;
+
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+color: #faf8f8;
+}
+
+/* Style the main content */
+.main {
+margin-left: 160px; /* Same as the width of the sidenav */
+padding: 0px 10px;
+}
+
+.search-container-patient form {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.search-container-patient input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-container-patient button[type="submit"] {
+  
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  
+}
+
+
+.Patients-TreatmentDetails label {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100px;
+}
+
+.Patients-TreatmentDetails  textarea {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+.Patients-TreatmentDetails{
+  width: 400px;
+ height: 490px;
+ background: rgba(202, 240, 248, 1);
+ color: #fff;
+ top: 60%;
+ left: 50%;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ box-sizing: border-box;
+ padding: 40px 30px;
+ border-radius: 5%;
+ color: #03045e;   
+ }
+ 
+ .Patients-TreatmentDetails h1{
+ 
+     margin: 0;
+     padding: 0 0 20px;
+     text-align: center;
+     font-size: 18px;
+ }
+ 
+ .Patients-TreatmentDetails p,select,label{
+     margin: 0;
+     padding-top:12px ;
+     font-weight: bold;
+ }
+ 
+ 
+ .Patients-TreatmentDetails input{
+ 
+     width: 100%;
+     margin-bottom: 20px ;
+ }
+ 
+ .Patients-TreatmentDetails input[type="text"],select
+ {
+   border: none;
+   padding: 8px ;
+ border-bottom: 1px solid #fff;
+ background: transparent;
+ outline: none;
+
+ color: #fdfeff;
+ font-size: 14px;
+ }
+ 
+ .Patients-TreatmentDetails input[type="submit"]
+ {
+ 
+ border: none;
+ outline: none;
+ height: 30px;
+ font-size: 16px;
+ border-radius: 15px;
+ color: #fff;
+ background: #1c8adb;
+ }
+ 
+ .Patients-TreatmentDetails::placeholder
+ {
+ 
+     color: #fdfeff;
+ }
+ 
+ .Patients-TreatmentDetails input[type="submit"]:hover
+ {
+ 
+     cursor: pointer;
+     background: #39dc79;
+     color: #000;
+ }
+ .Patients-TreatmentDetails a{
+ 
+     text-decoration: none;
+     font-size: 14px;
+     color: #fff;
+ }
+ 
+ .Patients-TreatmentDetails select {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: none;
+     border-radius: 5px;
+     color: #fff;
+     background-color:#94ceeb ;
+ }
+ 
+ .Patients-MedicationDetails{
+  width: 320px;
+ height: 600px;
+ background: rgba(202, 240, 248, 1);
+ color: #fff;
+ top: 55%;
+ left: 50%;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ box-sizing: border-box;
+ padding: 40px 30px;
+ border-radius: 5%;
+ color: #03045e; 
+ margin-bottom: 30px;  
+ }
+ 
+ .Patients-MedicationDetails h1{
+ 
+     margin: 0;
+     padding: 0 0 20px;
+     text-align: center;
+     font-size: 18px;
+ }
+ 
+ .Patients-MedicationDetails p,select,label{
+     margin: 0;
+     padding-top:12px ;
+     font-weight: bold;
+ }
+ 
+ 
+ .Patients-MedicationDetails input{
+ 
+     width: 100%;
+     margin-bottom: 20px ;
+ }
+ 
+ .Patients-MedicationDetails input[type="text"],select
+ {
+   border: none;
+   padding:2px ;
+ border-bottom: 1px solid #fff;
+ background: transparent;
+ outline: none;
+ height: 40px;
+ color: #fdfeff;
+ font-size: 16px;
+ }
+ 
+ .Patients-MedicationDetails input[type="submit"]
+ {
+ 
+ border: none;
+ outline: none;
+ height: 40px;
+ font-size: 16px;
+ border-radius: 20px;
+ color: #fff;
+ background: #1c8adb;
+ }
+ 
+ .Patients-MedicationDetails::placeholder
+ {
+ 
+     color: #fdfeff;
+ }
+ 
+ .Patients-MedicationDetails input[type="submit"]:hover
+ {
+ 
+     cursor: pointer;
+     background: #39dc79;
+     color: #000;
+ }
+ .Patients-MedicationDetails a{
+ 
+     text-decoration: none;
+     font-size: 14px;
+     color: #fff;
+ }
+ 
+ .Patients-MedicationDetails select {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: none;
+     border-radius: 5px;
+     color: #fff;
+     background-color:#94ceeb ;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+

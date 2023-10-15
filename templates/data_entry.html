@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Patients</title>
+    <link rel="stylesheet" href="../static/main.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        
+        <h3>Welcome!</h3>
+        <a href="{{ url_for('test_details') }}"><i class="fa fa-fw fa-home"></i>Enter Test Details</a>
+        <a href="{{ url_for('treatment_details') }}"><i class="fa fa-fw fa-wrench"></i>Enter Treatment Details</a>
+        <a href="{{ url_for('medication_details') }}"><i class="fa fa-medkit"></i>Enter Medication Details</a>
+        <a href="{{ url_for('dataentry')}}">Logout</a>
+       
+    </div>
+	<div class="topnav">
+        <a>Hospital Management System</a>
+		
+    </div>
+    
+	{% block test_details %}
+    {% endblock %}
+
+    {% block treatment_details %}
+    {% endblock %}
+
+    {% block medication_details %}
+    {% endblock %}
+
+
+    
+</body>
+</html>

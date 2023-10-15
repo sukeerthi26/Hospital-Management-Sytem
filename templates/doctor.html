@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Patients</title>
+    <link rel="stylesheet" href="/static/doctor-style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav">
+        <a>Hospital Management System</a>
+        <a href="{{ url_for('doctor')}}" class="split">logout</a>
+    </div>
+    <div class="sidebar">
+        <img src="/static/images/doctor.png" alt="Doctor" class="doctor">
+        <h3>Welcome!</h3>
+        <a href="{{ url_for('doctor_dashboard',doctor_id=doctor_id) }}"><i class="fa fa-fw fa-home"></i> Dashboard</a>
+        <a href="{{ url_for('appointment',doctor_id=doctor_id) }}"><i class="fa fa-fw fa-wrench"></i> Appointments<span id="unread-appointments"></span></a>
+        <a href="{{ url_for('prescribe_medication',doctor_id=doctor_id) }}"><i class="fa fa-medkit"></i> Prescribe Medicine</a>
+        <a href="{{ url_for('prescribe_treatment',doctor_id=doctor_id) }}"><i class="fa fa-medkit"></i> Prescribe Treatment</a>
+        <a href="{{ url_for('prescribe_test',doctor_id=doctor_id) }}"><i class="fa fa-medkit"></i> Prescribe Test</a>
+    </div>
+    {% block prescribe_medication %}
+    <div class="search-container-patient">
+        <form action="{{ url_for('search',doctor_id=doctor_id) }}" method="POST">
+          <input type="text" placeholder="Search patient by name, id, or gender" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    {% endblock %}
+
+    {% block treatmentTable %}
+    {% endblock %}
+
+    {% block appointmentTable %}
+    {% endblock %}
+
+    {% block viewpatient %}
+    {% endblock %}
+
+<script>
+    function getNewAppointments() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/api/unread_appointments/doctor_id');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                updateAppointmentsUI(data.unread_appointments);
+            } else {
+                console.log('Error retrieving unread appointments');
+            }
+        };
+        xhr.send();
+    }
+    
+    function updateAppointmentsUI(unreadAppointmentsCount) {
+        const unreadAppointmentsSpan = document.getElementById('unread-appointments');
+        unreadAppointmentsSpan.textContent = `(${unreadAppointmentsCount})`;
+    }
+    
+    setInterval(getNewAppointments, 3000);
+</script>       
+</body>
+</html>

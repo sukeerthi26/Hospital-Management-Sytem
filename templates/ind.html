@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System | Appointment Booking</title>
+    <script>
+        function updateDoctors() {
+            var specialisation = document.getElementById('specialisations').value;
+            var date = document.getElementById('date').value;
+            var time_slot = document.getElementById('timeslot').value;
+            var doctorsDropdown = document.getElementById('doctors');
+            doctorsDropdown.options.length = 0; // Clear the options
+    
+            // Make a request to the server to get the list of doctors for the selected specialisation
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/get_doctors/' + specialisation + '?date=' + date + '&time_slot=' + time_slot, true);
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var doctors = response.doctors;
+                    // Add each doctor to the second drop-down
+                    for (var i = 0; i < doctors.length; i++) {
+                        var option = document.createElement('option');
+                        option.text = doctors[i][1];
+                        option.value = doctors[i][1];
+                        doctorsDropdown.add(option);
+                    }
+            }
+        };
+    xhr.send();
+}
+    function showHideFields() {
+    var emergencyField = document.getElementById("emergency");
+    var bookButton = document.getElementById("book-button");
+    if (emergencyField.value === "1") {
+      bookButton.disabled = false;
+      document.getElementById("emergency-fields").style.display = "block";
+    } else {
+      bookButton.disabled = false;
+      document.getElementById("specialisations").required = true;
+      document.getElementById("date").required = true;
+      document.getElementById("timeslot").required = true;
+      document.getElementById("doctors").required = true;
+      document.getElementById("emergency-fields").style.display = "none";
+    }
+  }
+</script>
+    
+</head>
+
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a href="{{ url_for('patient_registration')}}" style="margin-top: 100px;">Register a Patient</a>
+    <a href="{{ url_for('book_appointment')}}">Book an Appointment</a>
+    <a href="{{ url_for('test_schedule')}}">Schedule a Test</a>
+    <a href="{{ url_for('treatment')}}">Schedule Treatment</a>
+    <a href="{{ url_for('admit')}}">Admit a patient</a>
+    <a href="{{ url_for('Discharge')}}">Discharge a patient</a>
+    <a href="{{ url_for('show_all_patients')}}">Edit patient details</a>
+    <a href="{{ url_for('frontdesk')}}">Logout</a>
+</div>
+
+<div style="background-color: #0077b6;">
+    <br>
+    <h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+<div class="Appointment" >
+
+    {% if error %}
+    <p class="error" style="font-size: 11px; color: red">{{ error }}</p>
+    {% endif %}
+    {% if status %}
+    <p class="status" style="font-size: 11px; color: green">{{ status }}</p>
+    {% endif %}
+    <h1 style="padding-top:10px">Appointment Booking</h1>
+    <form action="{{ url_for('authenticate_patient') }}" method="post">
+        <p>Patientid
+            <input type="text" required name="Patientid" placeholder="Enter Patientid" style="color:#0077b6">
+        </p>
+        <!-- <label>Emergency:</label>
+        <input type="radio" name="emergency" value="1">Yes
+        <input type="radio" name="emergency" value="0">No<br><br> -->
+        <p>Emergency</p> 
+        <select required name="emergency" onchange="showHideFields()">
+            <option value="">Select Emergency Field</option>
+            <option value = "0">No</option>
+            <option value = "1">Yes</option>
+        </select>
+        <div id="emergency-fields">
+            <p>Choose the Specialisation
+               <select id="specialisations" onchange="updateDoctors()">
+                <option value="">Select Specialisation</option>
+                {% for item in specialisations %}
+                <option value="{{ item[0] }}">{{ item[0] }}</option>
+                {% endfor %}
+                </select>
+            </p>
+            <p>Choose Date of Appointment
+                <input type="date" id="date" name="Date" onchange="updateDoctors()">
+            </p>
+            <p>Choose TimeSlot
+                <select id="timeslot" name="TimeSlot" onchange="updateDoctors()">
+                    <option value = ""> Select</option>
+                    <option value = "9-12">9-12</option>
+                    <option value = "2-5">2-5</option>
+                    <option value = "6-10">6-10</option>
+                </select>
+            </p>
+            <p>Choose the Doctor
+                <select id="doctors" name="DoctorName">
+                    <option value="">Select Doctor</option>
+                </select>
+            </p>
+        </div>
+        <input type="submit" name="submit" value="Book">
+    </form>
+    <script>
+        setTimeout(function() {
+            var status = document.querySelector('.status');
+            var error = document.querySelector('.error');
+           if (status) {
+            status.remove();
+          }
+          if (error) {
+            error.remove();
+          }
+        }, 2000); // 2 seconds
+  </script>
+</div>
+</html>
+
+<!-- JavaScript code to show/hide emergency fields -->
+<script>
+    var emergency = document.getElementsByName('emergency');
+    var emergency_fields = document.getElementById('emergency-fields');
+
+    for(var i=0; i<emergency.length; i++) {
+        emergency[i].addEventListener('change', function() {
+            console.log('Emergency field changed');
+            if(this.value == '1') {
+                emergency_fields.style.display = 'none';
+            } else {
+            emergency_fields.style.display = 'block';
+        }
+    });
+    
+}
+</script>
+
+        
+        

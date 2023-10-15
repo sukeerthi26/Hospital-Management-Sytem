@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+</head>
+
+<div id="mySidenav" class="sidenav">
+  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="{{url_for('add_user')}}" class="previous" style=" color: white; margin-top:40px;">&laquo; Back</a>
+  <a href="{{url_for('add_frontdesk_op')}}" style="margin-top: 20px;">Add Frontdesk operator</a>
+  <a href="{{url_for('add_dataentry_op')}}">Add DataEntry operator</a>
+  <a href="{{url_for('add_doctor')}}">Add Doctor</a>
+</div>
+
+<div style="background-color: #0077b6;">
+  <br>
+  <h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+<div class="AddingDoctor">
+  {% if status %}
+    <p class="status" style="font-size: 11px; color: green">{{ status }}</p>
+  {% endif %}
+  <form onsubmit="return validatePassword()" action="{{url_for('doctor_insert')}}" method="POST">
+  <h1 style="margin-top: 5px;">Register Doctor</h1>
+    <p>DoctorName
+            <input type="text" required name="DoctorName" id="Name" placeholder="Enter Name" style="color:#0077b6"></p>
+    <p>PhoneNumber</p>
+              <input type="tel" required name="Number" id ="PhoneNumber" placeholder="Enter PhoneNumber" pattern="[0-9]{10}" style="color:#0077b6">
+    <p>Department
+      <select id="Department" required name="Department">
+                <option value="">Select Department</option>
+                {% for item in departments %}
+                    <option value="{{ item[0] }}">{{ item[0] }}</option>
+                {% endfor %}
+      </select>
+    </p>
+    <p>Email_id</p>
+              <input type="email" required name="email" id ="PhoneNumber" placeholder="Enter Email_id" pattern="[a-z0-9._%+-]+@gmail\.com$" style="color:#0077b6">
+    <p>Password</p>
+        <input type="password" required name="password" id="password" required placeholder="Enter Password" style="color:#0077b6">
+    <p>Re-enterPassword</p>
+        <input type="password" required name="Re-enterpassword" id="Re-enterPassword" required placeholder="Re-enter Password" style="color:#0077b6">
+        <span id="error" style="color:red"></span>
+    <input type="submit" name="submit" value="Register">
+  </form>
+  <script>
+        setTimeout(function() {
+            var status = document.querySelector('.status');
+           if (status) {
+            status.remove();
+          }
+        }, 2000); // 2 seconds
+  </script>
+</div>
+<script>
+function validatePassword() {
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("Re-enterPassword").value;
+  if (password !== confirmPassword) {
+    document.getElementById("error").innerHTML = "Passwords do not match.";
+    return false;
+  }
+  else {
+    document.getElementById("error").innerHTML = "";
+    return true;
+  }
+}
+</script>
+
+</html>

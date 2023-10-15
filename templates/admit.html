@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System | Admit Patient</title>
+    <script>
+        function updaterooms() {
+            var Roomtype = document.getElementById('Roomtype').value;;
+            var roomDropdown = document.getElementById('room');
+            roomDropdown.options.length = 0; // Clear the options
+    
+            // Make a request to the server to get the list of doctors for the selected specialisation
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/get_rooms/' + Roomtype , true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var room = response.room;
+                    // Add each doctor to the second drop-down
+                    for (var i = 0; i < room.length; i++) {
+                        var option = document.createElement('option');
+                        option.text = room[i][0];
+                        option.value = room[i][0];
+                        roomDropdown.add(option);
+                    }
+            }
+        };
+    xhr.send();
+}
+</script>
+</head>
+
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a href="{{ url_for('patient_registration')}}" style="margin-top: 100px;">Register a Patient</a>
+    <a href="{{ url_for('book_appointment')}}">Book an Appointment</a>
+    <a href="{{ url_for('test_schedule')}}">Schedule a Test</a>
+    <a href="{{ url_for('treatment')}}">Schedule Treatment</a>
+    <a href="{{ url_for('admit')}}">Admit a patient</a>
+    <a href="{{ url_for('Discharge')}}">Discharge a patient</a>
+    <a href="{{ url_for('show_all_patients')}}">Edit patient details</a>
+    <a href="{{ url_for('frontdesk')}}">Logout</a>
+</div>
+
+<div style="background-color: #0077b6;">
+    <br>
+    <h1 style="color: white; font-size: 30px;">Hospital Management System</h1>
+</div>
+
+ <div class="admit">
+ {% if status %}
+ <p class="status" style="font-size: 11px; color: green">{{ status }}</p>
+ {% endif %}
+ {% if error %}
+ <p class="error" style="font-size: 11px; color: red">{{ error }}</p>
+ {% endif %}
+ <h1 style="padding-top:10px">Admitting a patient</h1>
+ <form action="{{ url_for('authenticate_admit') }}" method="post">
+    <p>Treatmentid
+        <input type="text" required name="Treatmentid" placeholder="Enter Treatmentid" style="color:#0077b6"></p>
+    <p>Enter Start Date</p>
+        <input type="date" required name="date" id="date">
+    <p>Choose the Room type
+        <select id="Roomtype" onchange="updaterooms()">
+            <option value="">Select Roomtype</option>
+            {% for item in Roomtype %}
+            <option value="{{ item[0] }}">{{ item[0] }}</option>
+            {% endfor %}
+        </select>
+    <p>Choose the RoomNumber
+        <select id="room" required name="RoomNumber">
+            <option value="">Select RoomNumber</option>
+        </select>
+    </p>
+
+    </p>
+    <input type="submit" name="submit" value="Admit">
+ </form>
+ </div>
+</html>

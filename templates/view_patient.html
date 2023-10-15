@@ -1,0 +1,115 @@
+{% extends 'doctor.html' %}
+{% block viewpatient %}
+
+
+{% if error %}
+    <p style="font-size: 15px; color: red; margin-left:40% ">{{ error }}</p>
+{% else %}
+<div class="view_patient_details">
+    <h3 style="margin-left:30%"><strong>Patient Details</strong> </h3>
+	<div class="basic_patient_details">
+        <p><strong>ID:</strong> {{ patient[0][0] }}</p>
+        <p><strong>Name:</strong> {{ patient[0][1] }}</p>
+        <p><strong>Age:</strong> {{ patient[0][2] }}</p>
+        <p><strong>Gender:</strong> {{ patient[0][3] }}</p>
+    </div>
+    <h3 style="margin-left:30%">Treatments Undergone </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Cost </th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for treatment_detail in treatment_details %}
+                <tr>
+                    <td>{{ treatment_detail[0] }}</td>
+                    <td>{{ treatment_detail[1] }}</td>
+                    <td>{{ treatment_detail[2] }}</td>
+                    <td>{{ treatment_detail[3] }}</td>
+                    <td>{{ treatment_detail[4] }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 style="margin-left:30%">Medications-prescribed </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Appointment ID</th>
+                <th>Date</th>
+                <th>Symptoms</th>
+                <th>Medication</th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment_detail in appointment_details %}
+                <tr>
+                    <td>{{ appointment_detail[0] }}</td>
+                    <td>{{ appointment_detail[1] }}</td>
+                    <td>{{ appointment_detail[2] }}</td>
+                    <td>{{ appointment_detail[3] }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3 style="margin-left:30%">Tests taken </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Test ID</th>
+                <th>Test Name</th>
+                <th>Test date</th>
+                <th>Test result</th>
+                <th>Test report</th>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for test_detail in test_details %}
+                <tr>
+                    <td>{{ test_detail[0] }}</td>
+                    <td>{{ test_detail[1] }}</td>
+                    <td>{{ test_detail[2] }}</td>
+                    <td>{{ test_detail[3] }}</td>
+                    <td><button onclick="viewFile({{ test_detail[0] }})">View</button></td>
+                    <script>
+                        function viewFile(test_id) {
+                            // Construct the URL of the Flask route that retrieves the blob data
+                            var url="/viewimage/"+test_id
+                            // Create a new XMLHttpRequest object
+                            var xhr = new XMLHttpRequest();
+                            // Make a HEAD request to the URL
+                            xhr.open('HEAD', url);
+                            xhr.onload = function() {
+                            if (xhr.status === 404) {
+                            // Display an error message
+                            alert('Image not found');
+                            } else {
+                            // Open a new window with the URL
+                            window.open(url);
+                            }
+                        };
+        xhr.send();
+                        }
+                    </script>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endif %}
+{% endblock %}
